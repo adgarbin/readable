@@ -14,7 +14,7 @@ Readable is a comment section application that lets you vote, add, delete, and e
 
 `node server`
 
-Install the React project dependencies:
+Open new terminal. Install the React project dependencies:
 
 `cd ..`
 
