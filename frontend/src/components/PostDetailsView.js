@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Entry from "./Entry";
 import { connect } from "react-redux";
+import { withStyles } from "material-ui/styles";
 import Typography from "material-ui/Typography";
 import CommentList from "./CommentList";
 import { changeCategory } from "../actions/category_actions";
@@ -9,6 +10,14 @@ import Button from "material-ui/Button";
 import Collapse from "material-ui/transitions/Collapse";
 import DialogForm from "./DialogForm";
 import AddIcon from "material-ui-icons/Add";
+
+const styles = theme => ({
+  error: {
+    [theme.breakpoints.up("md")]: {
+      marginTop: "40px"
+    }
+  }
+});
 
 class PostDetailsView extends Component {
   state = { expanded: false };
@@ -23,7 +32,7 @@ class PostDetailsView extends Component {
   };
 
   render() {
-    const { post } = this.props;
+    const { post, classes } = this.props;
     return (
       <div>
         {post && !post.deleted && (
@@ -69,6 +78,9 @@ class PostDetailsView extends Component {
             <CommentList postId={post.id} />
           </div>
         )}
+        <Typography variant="display1" align="center" className={classes.error}>
+          404! Page Not Found!
+        </Typography>
       </div>
     );
   }
@@ -85,7 +97,14 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PostDetailsView);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(PostDetailsView);
+
+export default withStyles(styles)(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PostDetailsView)
+);

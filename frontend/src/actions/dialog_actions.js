@@ -1,8 +1,8 @@
-const FLIP_DIALOG = 'FLIP_DIALOG';
+const FLIP_DIALOG = "FLIP_DIALOG";
 
-const flipDialog = (entity) => ({
-    type: FLIP_DIALOG,
-    entity
+const flipDialog = entity => ({
+  type: FLIP_DIALOG,
+  entity
 });
 
-export {FLIP_DIALOG, flipDialog}
+export { FLIP_DIALOG, flipDialog };
