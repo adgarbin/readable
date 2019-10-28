@@ -6,7 +6,7 @@ Readable is a comment section application that lets you vote, add, delete, and e
 
 > This ordered list of terminal commands will get you a copy of the project to run on your local machine.
 
-`git clone https://github.com/garba/readable.git`
+`git clone https://github.com/daltongarbin/readable.git`
 
 `cd api-server`
 
